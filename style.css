@@ -1,0 +1,73 @@
+:root {
+  --color-primary-orange: hsl(25, 97%, 53%);
+
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-light-grey: hsl(217, 12%, 63%);
+  --color-neutral-medium-grey: hsl(216, 12%, 54%);
+  --color-neutral-dark-blue: hsl(213, 19%, 18%);
+  --color-neutral-very-dark-blue: hsl(216, 12%, 8%);
+
+  --font-primary: font-family: 'Overpass', sans-serif;
+  --font-size-body: .9375rem;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+}
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role,
+ which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+
+
+
+
+.feedback-confirmation {
+  display: none;
+}
