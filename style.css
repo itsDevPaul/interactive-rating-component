@@ -50,12 +50,12 @@ h2 {
 }
 
 /* utilities */
-.visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+.visually-hidden{
+  position:absolute;
+  clip:rect(0 0 0 0);
+  height:1px;
+  width:1px;
+  overflow:hidden
 }
 
 .center {
@@ -109,7 +109,7 @@ body {
 
 .star-icon-wrapper {
   background-color: var(--color-neutral-medium-grey-15);
-  width: 1.875rem;
+  width: 2rem;
   aspect-ratio: 1;
   border-radius: 50%;
 }
