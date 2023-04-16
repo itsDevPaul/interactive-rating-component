@@ -4,58 +4,52 @@
   --color-neutral-white: hsl(0, 0%, 100%);
   --color-neutral-light-grey: hsl(217, 12%, 63%);
   --color-neutral-medium-grey: hsl(216, 12%, 54%);
+  --color-neutral-medium-grey-15: hsla(216, 12%, 54%, 0.15);
   --color-neutral-dark-blue: hsl(213, 19%, 18%);
   --color-neutral-very-dark-blue: hsl(216, 12%, 8%);
 
   --font-primary: font-family: 'Overpass', sans-serif;
-  --font-size-body: .9375rem;
 
-  --font-weight-normal: 400;
+  --font-weight-regular: 400;
   --font-weight-bold: 700;
 }
 
-/* https://piccalil.li/blog/a-modern-css-reset */
-
-/* Box sizing rules */
+/* CSS reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
 
-/* Remove list styles on ul, ol elements with a list role,
- which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
 
-/* Make images easier to work with */
 img,
 svg {
   max-width: 100%;
   display: block;
 }
 
+h1,
+h2 {
+  line-height: 1;
+}
+
+/* utilities */
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -64,10 +58,125 @@ svg {
   overflow: hidden;
 }
 
+.center {
+  display: grid;
+  place-items: center;
+}
 
+button {
+  cursor: pointer;
+  border: 0;
+}
 
+/* general styling */
+body {
+  font-family: var(--font-primary);
+  font-size: .9375rem;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-light-grey);
+  background-color: var(--color-neutral-very-dark-blue);
+  margin: 1rem;
+}
 
+.rating-container {
+  --content-padding: 1.325rem;
+  --content-spacing: 1.25rem;
+  --content-max-width: 21.75rem;
+}
+
+@media (min-width: 40em) {
+  .rating-container {
+    --content-padding: 1.625rem;
+    --content-max-width: 22.25rem;
+  }
+}
+
+.rating-evaluation,
+.feedback-confirmation {
+  background-color: var(--color-neutral-dark-blue);
+  padding: var(--content-padding);
+  border-radius: 1.25rem;
+  max-width: var(--content-max-width);
+  
+  display: grid;
+  gap: var(--content-spacing);
+}
+
+.rating-evaluation[data-hidden="true"] {
+  display: none;
+}
+
+.star-icon-wrapper {
+  background-color: var(--color-neutral-medium-grey-15);
+  width: 1.875rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.star-icon-wrapper img {
+  width: .875rem;
+}
+
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-white);
+}
+
+.rating-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.rating-number-button {
+  padding: .6875em 1.1875em;
+  border-radius: 50%;
+  background-color: var(--color-neutral-medium-grey-15);
+  color: var(--color-neutral-medium-grey);
+  transition: background-color 0.15s,
+   color 0.15s;
+}
+
+.rating-number-button:hover {
+  background-color: var(--color-primary-orange);
+  color: var(--color-neutral-white);
+}
+
+.rating-number-button:active {
+  background-color: var(--color-neutral-medium-grey);
+}
+
+.submit-button {
+  background-color: var(--color-primary-orange);
+  color: var(--color-neutral-white);
+  padding-block: .5rem;
+  letter-spacing: 0.1em;
+  border-radius: 100vmax;
+  transition: background-color 0.15s,
+   color 0.15s;
+}
+
+.submit-button:hover {
+  background-color: var(--color-neutral-white);
+  color: var(--color-primary-orange);
+}
 
 .feedback-confirmation {
   display: none;
+}
+
+.feedback-confirmation[data-visible="true"] {
+  display: grid;
+}
+
+.feedback-confirmation-rating {
+  background-color: var(--color-neutral-medium-grey-15);
+  padding: .5em .75em;
+  border-radius: 100vmax;
+  color: var(--color-primary-orange);
+}
+
+.feedback-confirmation-description {
+  text-align: center;
 }
