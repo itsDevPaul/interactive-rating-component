@@ -86,8 +86,9 @@ body {
 
 @media (min-width: 40em) {
   .rating-container {
-    --content-padding: 1.625rem;
-    --content-max-width: 22.25rem;
+    --content-padding: 1.65rem;
+    --content-spacing: 1.65rem;
+    --content-max-width: 25rem;
   }
 }
 
@@ -118,7 +119,7 @@ body {
 }
 
 .section-heading {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-white);
 }
@@ -138,6 +139,12 @@ body {
    color 0.15s;
 }
 
+@media(min-width: 40em) {
+  .rating-number-button {
+    padding: 1.0625em 1.5625em;
+  }
+}
+
 .rating-number-button:hover {
   background-color: var(--color-primary-orange);
   color: var(--color-neutral-white);
@@ -150,7 +157,7 @@ body {
 .submit-button {
   background-color: var(--color-primary-orange);
   color: var(--color-neutral-white);
-  padding-block: .5rem;
+  padding-block: .625em;
   letter-spacing: 0.1em;
   border-radius: 100vmax;
   transition: background-color 0.15s,
